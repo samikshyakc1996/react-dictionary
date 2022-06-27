@@ -22,8 +22,12 @@ const Dictionary = () => {
     }
   return (
     <div className='Dictionary'>
-        <form onSubmit={handleSearch}>
-            <input type="search" placeholder='Type a word . . ' onChange={handleKeywordChange} />
+        <form onSubmit={handleSearch} 
+                style={{display: "flex",
+                justifyContent: "center",
+                alignItems: "center"}}>
+            <input type="search"  placeholder='Type a word . . ' onChange={handleKeywordChange}
+             />
         </form>
        
             <Result result={result}/>
