@@ -1,10 +1,13 @@
 import {React, useState} from 'react'
 import axios from "axios"
+import Result from './Result';
+
 const Dictionary = () => {
     const [keyword, setKeyword]=useState("");
-
+    const [result,setResult]=useState(null);
     function handleResponse(response){
         console.log(response);
+        setResult(response);
     }
 
     //Documentation: apiUrl= `https://api.dictionaryapi.dev/api/v2/entries/en/pickles`
@@ -22,6 +25,8 @@ const Dictionary = () => {
         <form onSubmit={handleSearch}>
             <input type="search" placeholder='Type a word . . ' onChange={handleKeywordChange} />
         </form>
+       
+            <Result result={result}/>
     </div>
   )
 }
