@@ -1,5 +1,6 @@
 import React from 'react'
 import Meaning from './Meaning';
+import Phonetics from './Phonetics';
 const Result = (props) => {
     
     if(props.result){
@@ -9,6 +10,14 @@ const Result = (props) => {
     <div className='Result'>
         <h2> {props.result.data[0].word}</h2>
        {/* <p>{props.result.data[0].phonetics[1].text}</p> */}
+
+       {(props.result.data[0].phonetics).map((phonetic,index)=>(
+           <div key={index}>
+               <Phonetics phonetic={phonetic}/>
+           </div>
+           
+       ))}
+       
        {meanings.map((meaning,index)=>(
            <div key={index}> 
                <Meaning meaning={meaning}/>
