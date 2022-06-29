@@ -1,9 +1,11 @@
 import {React, useState} from 'react'
 import axios from "axios"
 import Result from './Result';
-
-const Dictionary = () => {
-    const [keyword, setKeyword]=useState("sunset");
+import "./Dictionary.css";
+const Dictionary = (props) => {
+    console.log("props from dict",props.defaultKeyword);
+    console.log(typeof(props.defaultKeyword));
+    const [keyword, setKeyword]=useState(props.defaultKeyword);
     const [result,setResult]=useState(null);
     const [searched,setSearched]=useState(false);
 
@@ -31,12 +33,15 @@ const Dictionary = () => {
     if(searched){
         return (
             <div className='Dictionary'>
+                
                 <form onSubmit={handleSearch} 
-                        style={{display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center"}}>
-                    <input type="search"  placeholder='Type a word . . ' onChange={handleKeywordChange}
+                       >
+                           <label className='form-text'>What word are you looking for?</label>
+                    <input type="search"  placeholder='Type a word . . '
+                     onChange={handleKeywordChange}
+                     defaultValue={props.defaultKeyword}
                      />
+                     <p>Suggested words: sunset, glass, wine, weather ...</p>
                 </form>
                
                     <Result result={result}/>

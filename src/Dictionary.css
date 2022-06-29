@@ -1,0 +1,31 @@
+.Dictionary{
+ 
+}
+
+
+form{
+  
+    
+}
+.Dictionary .form-text{
+    font-size: 2rem;
+    color:black;
+}
+.Dictionary , input[type="search"]{
+width: 100%;
+margin: 0.6em 0;
+padding: 0.5em 1em;
+font-size: 1.2rem;
+
+border-radius: 8px;
+
+}
+form p{
+    opacity: 0.7;
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
+/* input[type="search"]{
+    background-color: purple;
+} */

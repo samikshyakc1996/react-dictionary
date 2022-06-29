@@ -6,7 +6,7 @@ import Synonyms from './Synonyms';
 const Meaning = (props) => {
     
   return (
-    <div className='Meaning'>
+    <section className='Meaning'>
        <h2> <em>{props.meaning.partOfSpeech}</em></h2>
         {(props.meaning.definitions).map((item,index)=>(
           <ul key={index}>
@@ -18,7 +18,7 @@ const Meaning = (props) => {
         <Synonyms synonyms={props.meaning.synonyms}/>
         <Antonyms antonyms={props.meaning.antonyms}/>
 
-    </div>
+    </section>
   )
 }
 

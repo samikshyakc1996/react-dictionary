@@ -8,6 +8,7 @@ const Result = (props) => {
   
   return (
     <div className='Result'>
+        <section>
         <h2> {props.result.data[0].word}</h2>
        {/* <p>{props.result.data[0].phonetics[1].text}</p> */}
 
@@ -17,7 +18,7 @@ const Result = (props) => {
            </div>
            
        ))}
-       
+       </section>
        {meanings.map((meaning,index)=>(
            <div key={index}> 
                <Meaning meaning={meaning}/>
