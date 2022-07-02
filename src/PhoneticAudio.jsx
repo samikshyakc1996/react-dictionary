@@ -1,7 +1,7 @@
 import React from 'react'
 
 const PhoneticAudio = (props) => {
-    console.log("props from audio",props);
+    // console.log("props from audio",props);
     if(props.audio!==""){
         return (
             <div>
